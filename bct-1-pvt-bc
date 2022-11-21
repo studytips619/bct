@@ -1,0 +1,29 @@
+{
+    "config": {
+    "chainId": 124,
+    "homesteadBlock": 0,
+    "eip150Block": 0,
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "ethash": {}
+    },
+    "difficulty": "0x20000",
+    "gasLimit": "0x9000000",
+    "alloc": {}
+   }
+
+
+1)geth --datadir mission init genesis.json
+	2)geth --datadir .\mission\ --nodiscover
+3)geth attach \\.\pipe\geth.ipc
+	4)eth.accounts
+	5)personal.newAccount()
+	6)eth.accounts
+	7)miner.setEtherbase(eth.accounts[0])
+	8)miner.start(1)
+	9)eth.getBalance(eth.accounts[0])
+     10)miner.start(1)
+     11)eth.getBalance(eth.accounts[0])
