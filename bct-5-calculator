@@ -19,3 +19,23 @@
         return c;
     }
 }
+
+
+------------------------------------------------
+
+
+<!-- 0.install nodejs       
+1. Create folder..open with vscode
+2. copy solidity code in bank.sol and html/css/js code in index.js
+3. open and split terminal.
+4. npm i ganache cli web3 http-server solc
+5. In case ganache is throwing error: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+6. First terminal: .\node_modules\.bin\ganache-cli
+7. second teriminal : http-server
+8. links will be appear open any one. If ui is not appearing append /index.html in url
+9. add solidity extention
+10.stop 2nd terminal with cntl+c
+11. 2nd terminal hit command node
+12. 2nd: Web3=require('web3')
+13. 2nd: web3 = new Web3("http://localhost:8545")
+14. 2nd: web3.eth.getAccounts(console.log)
