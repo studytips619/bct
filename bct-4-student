@@ -1,0 +1,83 @@
+pragma solidity >= 0.7.0<0.8.0;
+
+// Build the Contract
+contract MarksManagmtSys
+{
+    // Create a structure for
+    // student details
+    struct Student
+    {
+        int ID;
+        string fName;
+        string lName;
+        int marks;
+    }
+
+    address owner;
+    int public stdCount = 0;
+    mapping(int => Student) public stdRecords;
+
+    modifier onlyOwner
+    {
+        require(owner == msg.sender);
+        _;
+    }
+    constructor()
+    {
+        owner=msg.sender;
+    }
+
+    // Create a function to add
+    // the new records
+    function addNewRecords(int _ID,
+                        string memory _fName,
+                        string memory _lName,
+                        int _marks) public onlyOwner
+    {
+        // Increase the count by 1
+        stdCount = stdCount + 1;
+
+        // Fetch the student details
+        // with the help of stdCount
+        stdRecords[stdCount] = Student(_ID, _fName,
+                                    _lName, _marks);
+    }
+
+    // Create a function to add bonus marks
+    function bonusMarks(int _bonus) public onlyOwner
+    {
+        stdRecords[stdCount].marks =
+                    stdRecords[stdCount].marks + _bonus;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+
+1. Create folder..open with vscode
+2. copy solidity code in bank.sol and html/css/js code in index.js
+3. open and split terminal.
+4. npm i ganache cli web3 http-server solc
+5. In case ganache is throwing error: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+6. First terminal: .\node_modules\.bin\ganache-cli
+7. second teriminal : http-server
+8. links will be appear open any one. If ui is not appearing append /index.html in url
+9. add solidity extention
+10.stop 2nd terminal with cntl+c
+11. 2nd terminal hit command node
+12. 2nd: Web3=require('web3')
+13. 2nd: web3 = new Web3("http://localhost:8545")
+14. 2nd: web3.eth.getAccounts(console.log)
+15. 2nd: bytecode=fs.readfilesync('bank_sol') run nahi hot -->
