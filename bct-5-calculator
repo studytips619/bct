@@ -1,0 +1,21 @@
+
+        /
+    function subtract (uint _a, uint _b) public pure returns(uint) {
+        uint c;
+        c = _a - _b;
+        return c;
+    }
+    
+    function multiply (uint _a, uint _b) public pure returns(uint) {
+        uint c;
+        c = _a * _b;
+        return c;
+    }
+    
+    function divide (uint _a, uint _b) public pure returns(uint) {turns(uint) {
+        uint c;
+        uint c;
+        c =1 _a / _b;
+        return c;
+    }
+}
